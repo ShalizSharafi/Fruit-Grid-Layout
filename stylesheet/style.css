@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: Font1;
+  src: url(../font/xfu00W3wXn3QLUJXhzq42AHiuZXYO68.woff2);
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* copyright ///////////////////////////*/
+
+.copyright {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color:lightblue;
+  z-index: 2;
+  border-radius: 50% 50% 39% 61% / 30% 37% 63% 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover{
+       >.copyright-ownership{
+              opacity: 1;
+              visibility: visible;
+              right: 90%;
+       }
+  }
+  >figure{
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       width: 80px;
+       height: 80px;
+       background-color: white;
+       border-radius: inherit;
+       >img{
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              scale: 1.3;
+       }
+  }
+  >.copyright-ownership{
+       width: 220px;
+       height: 60px;
+       position: absolute;
+       right: 0;
+       top: calc(50% - 30px);
+       border-radius: 38% 62% 41% 59% / 30% 37% 63% 70% ;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       border-bottom: 1px solid #fefefe;
+       visibility: hidden;
+       opacity: 0;
+       transition: .5s;
+       z-index: -1;
+       >p{
+              color:#fefefe;
+              font-size: 14px;
+              font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+              font-weight: 900;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 100%;
+              height: 100%;
+       }
+
+  }
+ 
+}
+
+
+
+
+/* fruit gallery////// */
+
+section {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(3, calc(100% / 3));
+  > figure {
+    /* border: 1px solid black; */
+    position: relative;
+    overflow: hidden;
+    &:hover {
+      > div {
+        visibility: visible;
+        opacity: 1;
+        > p {
+          top: calc(50% - 15px);
+          transition: 0.6s;
+        }
+      }
+    }
+    &:first-of-type {
+      grid-area: 1 / 1 / span 1 / span 1;
+    }
+    &:nth-of-type(2) {
+      grid-area: 1 / 2 / span 2 / span 1;
+    }
+    &:nth-of-type(3) {
+      grid-area: 1 / 3 / span 1 / span 1;
+    }
+    &:nth-of-type(4) {
+      grid-area: 1 / 4 / span 1 / span 1;
+    }
+    &:nth-of-type(5) {
+      grid-area: 2 / 1 / span 1 / span 1;
+    }
+    &:nth-of-type(6) {
+      grid-area: 2 / 3 / span 1 / span 1;
+    }
+    &:nth-of-type(7) {
+      grid-area: 2 / 4 / span 2 / span 1;
+    }
+    &:nth-of-type(8) {
+      grid-area: 3 / 1 / span 1 / span 1;
+    }
+    &:nth-of-type(9) {
+      grid-area: 3 / 2 / span 1 / span 1;
+    }
+    &:last-of-type {
+      grid-area: 3 / 3 / span 1 / span 1;
+    }
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    > div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      /* border: 1px solid black; */
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.4s;
+      display: flex;
+      > p {
+        position: absolute;
+        width: 60px;
+        height: 30px;
+        /* border: 1px solid red; */
+        top: 100%;
+        left: calc(50% - 30px);
+        display: flex;
+        justify-content: center;
+        transition: 0.4s;
+        font-family: Font1;
+        font-size: 35px;
+        text-transform: uppercase;
+        font-weight: 900;
+      }
+    }
+  }
+}
